@@ -1,0 +1,74 @@
+[
+  {
+    "metadata": {
+      "report_id": "demo-ja-001",
+      "clinical_context": {
+        "patient_age": "unknown",
+        "lesion_location": "frontal",
+        "lesion_laterality": "not specified"
+      },
+      "diagnosis": {
+        "integrated_diagnosis": "Oligodendroglioma, WHO grade 2",
+        "who_entity": "oligodendroglioma",
+        "who_grade": "2",
+        "molecular_entity": "IDH-mutant",
+        "diagnostic_certainty": "not specified"
+      },
+      "histopathology": {
+        "growth_pattern": "not specified",
+        "necrosis": "absent",
+        "microvascular_proliferation": "absent",
+        "cellular_morphology": "oligodendroglial"
+      },
+      "proliferation": {
+        "ki67_index": "12.20%"
+      },
+      "molecular": [
+        {
+          "molecular_marker": "IDH1",
+          "molecular_status": "mutant",
+          "molecular_method": "immunohistochemistry"
+        },
+        {
+          "molecular_marker": "ATRX",
+          "molecular_status": "retained",
+          "molecular_method": "immunohistochemistry"
+        }
+      ],
+      "immunohistochemistry": [
+        {
+          "IHC_marker": "GFAP",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "Vimentin",
+          "IHC_result": "negative"
+        },
+        {
+          "IHC_marker": "OLIG2",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "IDH1 R132H",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "ATRX",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "Neurofilament",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "p53",
+          "IHC_result": "negative"
+        },
+        {
+          "IHC_marker": "MGMT",
+          "IHC_result": "1+"
+        }
+      ]
+    }
+  }
+]

@@ -92,20 +92,13 @@ See [Input files](docs/INPUTS.md), [JSON schema](docs/SCHEMA.md),
 
 ## Demo reports
 
-One reviewed English report and one reviewed Japanese report are planned as
-direct-extraction demos. They will be added only after de-identification and
-publication approval. Demo reports are not used as few-shot examples or
-included in evaluation results.
+The repository includes one de-identified English report and one de-identified
+Japanese report with their direct `qwen38_27b` extraction results. These files
+are examples of the extraction input and output; they are not few-shot examples
+or evaluation results.
 
-See [`examples/README.md`](examples/README.md) for the expected files.
-
-## Data policy
-
-Do not commit reports, annotations, completed few-shot files, model responses,
-or logs unless they are explicitly approved for public release. The future demo
-files are the only planned report-level exception.
-
-See [Data policy](docs/DATA_POLICY.md) for the release checklist.
+See [`examples/README.md`](examples/README.md) and the
+[English](examples/en/report.txt) and [Japanese](examples/ja/report.txt) demos.
 
 ## License
 

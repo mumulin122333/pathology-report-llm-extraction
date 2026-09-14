@@ -1,4 +1,4 @@
-# Keep clinical data outside the repository. See docs/DATA_POLICY.md.
+# Keep local reports and generated outputs out of version control.
 data/
 reports/
 annotations/

@@ -1,0 +1,67 @@
+[
+  {
+    "metadata": {
+      "report_id": "demo-en-001",
+      "clinical_context": {
+        "patient_age": "49",
+        "lesion_location": "left frontal base",
+        "lesion_laterality": "left"
+      },
+      "diagnosis": {
+        "integrated_diagnosis": "atypical meningioma, CNS WHO grade 2",
+        "who_entity": "meningioma",
+        "who_grade": "II",
+        "molecular_entity": "not specified",
+        "diagnostic_certainty": "compatible with"
+      },
+      "histopathology": {
+        "growth_pattern": "nested, solid sheet-like, focal microcystic",
+        "necrosis": "focal necrosis",
+        "microvascular_proliferation": "not described",
+        "cellular_morphology": "meningothelial"
+      },
+      "proliferation": {
+        "ki67_index": "13%"
+      },
+      "molecular": [
+        {
+          "molecular_marker": "MTAP",
+          "molecular_status": "retained",
+          "molecular_method": "immunohistochemistry"
+        },
+        {
+          "molecular_marker": "H3K27me3",
+          "molecular_status": "retained",
+          "molecular_method": "immunohistochemistry"
+        },
+        {
+          "molecular_marker": "BAP1",
+          "molecular_status": "retained",
+          "molecular_method": "immunohistochemistry"
+        }
+      ],
+      "immunohistochemistry": [
+        {
+          "IHC_marker": "SSTR2a",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "MTAP",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "H3K27me3",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "BAP1",
+          "IHC_result": "positive"
+        },
+        {
+          "IHC_marker": "GFAP",
+          "IHC_result": "negative"
+        }
+      ]
+    }
+  }
+]

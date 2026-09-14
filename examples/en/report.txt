@@ -1,0 +1,15 @@
+Age: 49 years
+Specimen: Meninx, left frontal base, excision
+Clinical diagnosis: Left frontal base meningioma
+
+The specimen submitted consists of more than 20 tissue fragments measuring up
+to 2.0 x 1.0 x 1.0 cm, fixed in formalin. Grossly, they are red to white and
+elastic. All tissue fragments were submitted for processing and labeled A1-3.
+Microscopically, the sections show a meningioma composed of tumor cells arranged
+in nested, areas of solid sheet-like, and focal microcystic growth patterns.
+Many tumor cells have large nucleoli. Hypercellularity and focal necrosis are
+noted. No brain invasion is found. The mitotic rate is 5 per square millimeter.
+PAS stain is unremarkable. Immunohistochemically, the tumor cells are positive
+for SSTR2a. MTAP, H3K27me3, and BAP1 are retained. GFAP shows no definite brain
+invasion. Ki-67 labeling index is 13%. In summary, the findings are compatible
+with atypical meningioma, CNS WHO grade 2.
