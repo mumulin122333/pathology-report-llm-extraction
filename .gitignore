@@ -1,0 +1,24 @@
+# Keep clinical data outside the repository. See docs/DATA_POLICY.md.
+data/
+reports/
+annotations/
+references/
+predictions/
+outputs/
+logs/
+translations/
+fewshot/
+results/
+*_scores.csv
+*_summary.csv
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.coverage
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
