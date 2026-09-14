@@ -8,9 +8,11 @@ outputs/
 logs/
 translations/
 fewshot/
+fewshot.local.json
 results/
 *_scores.csv
 *_summary.csv
+.env
 
 __pycache__/
 *.py[cod]

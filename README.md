@@ -1,11 +1,13 @@
-# Pathology Report LLM Evaluation
+# Pathology Report LLM Extraction and Evaluation
 
-This repository provides command-line tools for evaluating structured data
-extracted from pathology reports. It compares model-generated JSON with
-reference annotations and reports per-case and aggregate scores.
+This repository provides command-line tools for extracting structured data from
+pathology reports and comparing the generated JSON with reference annotations.
+The extraction command supports English and Japanese reports and uses the same
+prompt and decoding settings across the configured models.
 
-No reports, annotations, few-shot examples, translations, or model outputs are
-included. All data must be supplied locally by the user.
+The reports used as few-shot examples in the experiments are not distributed.
+Users can run zero-shot extraction or provide their own examples with the
+included template.
 
 ## Install
 
@@ -15,18 +17,61 @@ Python 3.10 or newer is required. The package has no runtime dependencies.
 pip install -e .
 ```
 
-## Run an evaluation
+## Extract a report
 
-Place reference annotations and predictions in separate directories outside the
-repository, then run:
+The selected model must already be available through an OpenAI-compatible
+chat-completions endpoint. List the configured models with:
 
 ```bash
-pathology-report-score \
-  --reference-dir /path/to/annotations \
-  --prediction-dir /path/to/predictions
+pathology-report-extract --list-models
 ```
 
-To save per-case scores:
+Run direct extraction on an English report:
+
+```bash
+pathology-report-extract \
+  --model qwen38_27b \
+  --language en \
+  --input /path/to/report.txt \
+  --output /path/to/prediction.json
+```
+
+Use `--language ja` for a Japanese report. The `--model` flag selects the model
+name, endpoint, decoding settings, and model-specific request options from
+[`extraction/models.json`](extraction/models.json). Endpoint values can be
+overridden with `--base-url` and `--served-model`.
+
+The saved JSON is the direct model result after schema-shaped JSON parsing. The
+extractor does not translate the input, add findings with rules, or remove
+markers from the response.
+
+See [Extraction](docs/EXTRACTION.md) and [Models](docs/MODELS.md).
+
+## Add your own few-shot examples
+
+Copy the template outside the repository and replace its placeholders:
+
+```bash
+cp examples/fewshot.example.json /secure/path/fewshot.json
+```
+
+Pass the completed file to extraction:
+
+```bash
+pathology-report-extract \
+  --model qwen38_27b \
+  --language en \
+  --input /path/to/report.txt \
+  --output /path/to/prediction.json \
+  --few-shot /secure/path/fewshot.json
+```
+
+Without `--few-shot`, extraction runs zero-shot. See
+[Few-shot input](docs/FEW_SHOT.md).
+
+## Evaluate predictions
+
+Place reference annotations and predictions in separate directories, then run:
 
 ```bash
 pathology-report-score \
@@ -36,56 +81,31 @@ pathology-report-score \
   --output-json /path/to/summary.json
 ```
 
-The command reports how many files were found, paired, skipped, or rejected as
-invalid before printing the aggregate metrics.
-
-## Input
-
-Annotations and predictions use the same JSON schema. Files are paired by their
-complete filename stem by default. They can instead be paired with
-`metadata.report_id` by passing `--key report_id`.
-
-Use `--reference-dir` or `--prediction-dir` more than once when files are split
-across multiple directories. Use `--exclude-cases` for case identifiers that
-should not be scored, and `--exclude-fields` for fields that should not
-contribute to the scalar score.
-
-See [Input files](docs/INPUTS.md) and [JSON schema](docs/SCHEMA.md) for details.
-
-## Scores
-
-Each case receives four values:
-
-- `scalar`: mean similarity over non-list fields
-- `mol_f1`: marker-name F1 for molecular findings
-- `ihc_f1`: marker-name F1 for immunohistochemistry findings
-- `overall`: weighted combination of the three metrics
+Each case receives `scalar`, `mol_f1`, `ihc_f1`, and `overall` scores.
 
 ```text
 overall = 0.50 * scalar + 0.25 * mol_f1 + 0.25 * ihc_f1
 ```
 
-Aggregate scores are macro-averages over the cases that were successfully
-paired and parsed. The exact normalization and matching rules are documented in
-[Scoring](docs/SCORING.md).
+See [Input files](docs/INPUTS.md), [JSON schema](docs/SCHEMA.md),
+[Scoring](docs/SCORING.md), and [Output](docs/OUTPUTS.md).
+
+## Demo reports
+
+One reviewed English report and one reviewed Japanese report are planned as
+direct-extraction demos. They will be added only after de-identification and
+publication approval. Demo reports are not used as few-shot examples or
+included in evaluation results.
+
+See [`examples/README.md`](examples/README.md) for the expected files.
 
 ## Data policy
 
-The repository is intended to contain code and documentation only. Keep source
-reports, annotations, prompts containing report text, translations, logs, and
-generated outputs outside the repository. The included `.gitignore` blocks the
-default local data and output paths, but users should still inspect staged files
-before every push.
+Do not commit reports, annotations, completed few-shot files, model responses,
+or logs unless they are explicitly approved for public release. The future demo
+files are the only planned report-level exception.
 
 See [Data policy](docs/DATA_POLICY.md) for the release checklist.
-
-## Documentation
-
-- [Input files](docs/INPUTS.md)
-- [JSON schema](docs/SCHEMA.md)
-- [Scoring](docs/SCORING.md)
-- [Output](docs/OUTPUTS.md)
-- [Data policy](docs/DATA_POLICY.md)
 
 ## License
 

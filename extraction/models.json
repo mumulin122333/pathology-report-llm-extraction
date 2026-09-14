@@ -1,0 +1,75 @@
+{
+  "decoding": {
+    "temperature": 0.0,
+    "seed": 0,
+    "max_tokens": 4000
+  },
+  "models": {
+    "qwen38_27b": {
+      "label": "Qwen3.8-27B",
+      "hf_id": "Qwen/Qwen3.8-27B",
+      "served_model": "qwen38-27b",
+      "base_url": "http://127.0.0.1:8001/v1",
+      "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}
+    },
+    "qwen36_27b": {
+      "label": "Qwen3.6-27B",
+      "hf_id": "Qwen/Qwen3.6-27B",
+      "served_model": "qwen36-27b",
+      "base_url": "http://127.0.0.1:8002/v1",
+      "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}
+    },
+    "qwen35_27b_bf16": {
+      "label": "Qwen3.5-27B",
+      "hf_id": "Qwen/Qwen3.5-27B",
+      "served_model": "qwen35-27b-bf16",
+      "base_url": "http://127.0.0.1:8003/v1",
+      "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}
+    },
+    "muse_glimmer": {
+      "label": "Muse-Glimmer-30B",
+      "hf_id": "meta-models/Muse-Glimmer-30B",
+      "served_model": "muse-glimmer",
+      "base_url": "http://127.0.0.1:8004/v1",
+      "extra_body": {},
+      "vllm_image": "vllm/vllm-openai:nightly"
+    },
+    "nemotron35": {
+      "label": "Nemotron-3.5-30B-A3B",
+      "hf_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "served_model": "nemotron35",
+      "base_url": "http://127.0.0.1:8005/v1",
+      "extra_body": {"chat_template_kwargs": {"enable_thinking": false}}
+    },
+    "gemma4_26b": {
+      "label": "Gemma-4-26B-A4B",
+      "hf_id": "google/gemma-4-26B-A4B-it",
+      "served_model": "gemma4-26b",
+      "base_url": "http://127.0.0.1:8006/v1",
+      "extra_body": {"chat_template_kwargs": {"enable_thinking": false}},
+      "vllm_image": "vllm/vllm-openai:gemma4-0505-cu130"
+    },
+    "medgemma_27b": {
+      "label": "MedGemma-27B-text",
+      "hf_id": "google/medgemma-27b-text-it",
+      "served_model": "medgemma-27b",
+      "base_url": "http://127.0.0.1:8007/v1",
+      "extra_body": {},
+      "vllm_image": "vllm/vllm-openai:gemma4-0505-cu130"
+    },
+    "medgemma_15_4b": {
+      "label": "MedGemma-1.5-4B",
+      "hf_id": "google/medgemma-1.5-4b-it",
+      "served_model": "medgemma-1.5-4b",
+      "base_url": "http://127.0.0.1:8008/v1",
+      "extra_body": {}
+    },
+    "medgemma_4b": {
+      "label": "MedGemma-4B",
+      "hf_id": "google/medgemma-4b-it",
+      "served_model": "medgemma-4b",
+      "base_url": "http://127.0.0.1:8009/v1",
+      "extra_body": {}
+    }
+  }
+}

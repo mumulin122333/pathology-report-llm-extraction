@@ -1,0 +1,36 @@
+[
+  {
+    "report_id": "<replace with a local example ID>",
+    "report": "<replace with local report text; do not commit the completed file>",
+    "output": [
+      {
+        "metadata": {
+          "report_id": "<same local example ID>",
+          "clinical_context": {
+            "patient_age": "<value or not specified>",
+            "lesion_location": "<value or not specified>",
+            "lesion_laterality": "<value or not specified>"
+          },
+          "diagnosis": {
+            "integrated_diagnosis": "<value or not specified>",
+            "who_entity": "<value or not specified>",
+            "who_grade": "<value or not specified>",
+            "molecular_entity": "<value or not specified>",
+            "diagnostic_certainty": "<value or not specified>"
+          },
+          "histopathology": {
+            "growth_pattern": "<value or not specified>",
+            "necrosis": "<value or not specified>",
+            "microvascular_proliferation": "<value or not specified>",
+            "cellular_morphology": "<value or not specified>"
+          },
+          "proliferation": {
+            "ki67_index": "<value or not specified>"
+          },
+          "molecular": [],
+          "immunohistochemistry": []
+        }
+      }
+    ]
+  }
+]
